@@ -1,0 +1,554 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background: #2c2c2c;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar__container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navbar__logo {
+    background-color: #ffffff;
+    background-image: rgb(255, 255, 255);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar__item {
+    height: 80px;
+}
+
+.navbar__links {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height: 100%;
+    transition: all 0.3s ease;
+    
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, aqua, #1dfd8d,#16da16);
+    background: linear-gradient(to right,  #ecc61a,#ffd621, #ecc61a);
+    color:#fff;
+    transition: all 0.3 ease;
+}
+
+.navbar__links:hover {
+    color: #db0f0f ;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.5 ease;
+        z-index: -1;
+
+    }
+
+    .navbar__menu.active {
+        background: #363636;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5 ease;
+        z-index: 99;
+        height: 30vh;
+        font-size: 1.6rem;
+
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: rgb(255, 255, 255);
+        
+    }
+
+    .navbar__item {
+        width: 100%;
+
+    }
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+        
+    }
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+/*Obras section*/
+
+.obras {
+    background: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 3rem 0;
+}
+ .obras h1 {
+    font-size: 3rem;
+    background-color:rgb(61, 61, 61);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+ }
+
+ .obras__wrapper {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     grid-template-rows: 1fr;
+
+ }
+
+ .obras__card {
+     margin: 10px;
+     height: 425px;
+     width: 300px;
+     border-radius: 4px;
+     background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phVictoriaHills.png);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     color: #fff;
+     position: relative;
+     transition: 0.3s ease-in;
+ }
+ .obras__card:nth-child(2) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phCityTower.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+ }
+
+ .obras__card:nth-child(3) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phBrisasdeMarbella.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+    
+ }
+ .obras__card:nth-child(4) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phGreenBay.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(5) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phElmare100y200.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(6) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phElmare500y600.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(7) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phMacGregorHill.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(8) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phVivendiTower3000y4000.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(9) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phAcuarela.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(10) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phTeusTower.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+ .obras__card:nth-child(11) {
+    margin: 10px;
+    height: 425px;
+    width: 300px;
+    border-radius: 4px;
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0,0) 0% , rgba(17, 17, 17,0.6) 100%), url(/imagenes/phGreenBay2021.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s ease-in;
+
+ }
+
+ .obras__card h2 {
+     text-align: center;
+ }
+ .obras__card p {
+     text-align: center;
+     margin-top: 24px;
+     font-size: 20px;
+ }
+
+.obras__card:hover {
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+}
+
+.obras__card img {
+   border-radius: 4px;
+   margin-bottom: 10px;
+
+}
+
+@media screen and (max-width: 1300px) {
+    
+    .obras__wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .obras__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*footer section*/
+
+.footer__container {
+    background-color: #fff;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#footer__logo {
+    color: #131313;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.footer__links {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+
+}
+.footer__link--wrapper {
+    display: flex;
+
+}
+.footer__link--items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 160px;
+    box-sizing: border-box;
+}
+.footer__link--items h2 {
+    margin-bottom: 16px;
+    color: #000000;
+
+}
+.footer__link--items a {
+
+color: #000000;
+text-decoration: none;
+margin-bottom: 0.5rem;
+transition: 0.3s ease-out;
+
+}
+
+.footer__link--items a:hover{
+    color: #1ac36f;
+    transition: 0.3s ease-out;
+}
+
+.social__icon--link {
+    color: #000000;
+    font-size: 24px;
+
+}
+.social__media {
+    max-width: 1000px;
+    width: 100%;
+
+}
+.social__media--wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+
+}
+.social__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    margin-left: 10rem;
+}
+
+.website__rights {
+    color: #000000;
+
+}
+
+@media screen and (max-width: 820px) {
+    .footer__links {
+        padding-top: 2rem;
+
+    }
+
+    #footer__logo {
+        margin-bottom: 2rem;
+
+    }
+
+    .website__rights {
+        margin-bottom: 2rem;
+    }
+
+    .footer__link--wrapper {
+        flex-direction: column;
+    }
+
+    .social__media--wrap {
+        flex-direction: column;
+
+    }
+
+
+}
+
+@media screen and  (max-width: 480px) {
+    .footer__link--items {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+    }
+}
+
